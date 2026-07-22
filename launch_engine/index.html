@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>🌌 Space Project Launch Engine</title>
+<style>
+body { background:#050510; color:white; font-family:monospace; padding:30px; }
+.ok { color:#7cff7c; }
+</style>
+</head>
+<body>
+<h1>🚀 Space Project Boot</h1>
+<pre id="status"></pre>
+<script>
+const systems = [
+ '🌠 Cosmic Nexus',
+ '🧠 Cosmic Core',
+ '🔭 Observation Network',
+ '🛰️ Exploration System',
+ '🧮 Simulation Universe'
+];
+
+let output = 'SPACE PROJECT LAUNCH SEQUENCE\n\n';
+let i = 0;
+function boot(){
+ if(i < systems.length){
+  output += '[ONLINE] ' + systems[i] + '\n';
+  document.getElementById('status').textContent = output;
+  i++;
+  setTimeout(boot,500);
+ } else {
+  output += '\nSTATUS: OPERATIONAL 🚀';
+  document.getElementById('status').textContent = output;
+ }
+}
+boot();
+</script>
+</body>
+</html>
