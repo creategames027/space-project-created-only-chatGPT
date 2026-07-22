@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Black Hole Escape</title>
+<style>
+body{background:#000;color:white;text-align:center;font-family:Arial}canvas{background:#050505;border:1px solid #444}
+</style>
+</head>
+<body>
+<h1>🕳️ Black Hole Escape</h1>
+<p>Move the spacecraft away from the black hole!</p>
+<canvas id="game" width="600" height="400"></canvas>
+<p id="status">Use arrow keys</p>
+<script>
+const c=document.getElementById('game'),ctx=c.getContext('2d');
+let ship={x:500,y:200};
+let keys={};
+addEventListener('keydown',e=>keys[e.key]=true);
+addEventListener('keyup',e=>keys[e.key]=false);
+function loop(){
+ctx.clearRect(0,0,600,400);
+let dx=ship.x-150,dy=ship.y-200;
+let dist=Math.sqrt(dx*dx+dy*dy);
+if(keys['ArrowLeft'])ship.x-=3;
+if(keys['ArrowRight'])ship.x+=3;
+if(keys['ArrowUp'])ship.y-=3;
+if(keys['ArrowDown'])ship.y+=3;
+ctx.fillStyle='purple';ctx.beginPath();ctx.arc(150,200,60,0,Math.PI*2);ctx.fill();
+ctx.fillStyle='white';ctx.fillRect(ship.x,ship.y,15,10);
+if(dist<70)document.getElementById('status').innerText='⚠️ Event horizon reached!';
+requestAnimationFrame(loop);
+}
+loop();
+</script>
+</body>
+</html>
