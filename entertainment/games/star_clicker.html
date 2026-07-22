@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Star Clicker</title>
+<style>
+body{background:#050510;color:white;text-align:center;font-family:Arial}
+button{font-size:24px;padding:20px;border-radius:10px;cursor:pointer}
+</style>
+</head>
+<body>
+<h1>⭐ Star Clicker</h1>
+<p>Collect cosmic energy by clicking a star!</p>
+<h2 id="score">Energy: 0</h2>
+<button onclick="clickStar()">⭐</button>
+<script>
+let energy=0;
+function clickStar(){
+ energy++;
+ document.getElementById('score').innerText='Energy: '+energy;
+}
+</script>
+</body>
+</html>
