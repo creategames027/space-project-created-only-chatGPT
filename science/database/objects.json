@@ -1,0 +1,24 @@
+{
+  "objects": [
+    {
+      "name": "Sun",
+      "type": "Star",
+      "category": "known"
+    },
+    {
+      "name": "Andromeda Galaxy",
+      "type": "Galaxy",
+      "category": "known"
+    },
+    {
+      "name": "TON 618",
+      "type": "Black Hole",
+      "category": "known"
+    },
+    {
+      "name": "Fast Radio Burst",
+      "type": "Radio Phenomenon",
+      "category": "new_discovery"
+    }
+  ]
+}
