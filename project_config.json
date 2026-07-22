@@ -1,0 +1,16 @@
+{
+  "project": "Space Project",
+  "version": "Global Evolution 001",
+  "systems": {
+    "entertainment": true,
+    "science": true,
+    "database": true,
+    "portal": true
+  },
+  "future_features": [
+    "universe_map",
+    "object_search",
+    "simulation_engine",
+    "observation_log"
+  ]
+}
