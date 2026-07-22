@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Star System Simulator</title>
+<style>
+body{background:black;color:white;text-align:center;font-family:Arial;overflow:hidden}
+canvas{border:1px solid #333;background:#000}
+</style>
+</head>
+<body>
+<h1>⭐ Mini Star System Simulator</h1>
+<canvas id="space" width="700" height="500"></canvas>
+<p>Gravity simulation: planet orbiting a star</p>
+<script>
+const c=document.getElementById('space');
+const ctx=c.getContext('2d');
+let planet={x:350+180,y:250,v:0.02,angle:0};
+function draw(){
+ctx.clearRect(0,0,c.width,c.height);
+ctx.fillStyle='white';
+for(let i=0;i<80;i++){
+ ctx.fillRect(Math.random()*700,Math.random()*500,1,1);
+}
+ctx.fillStyle='yellow';
+ctx.beginPath();ctx.arc(350,250,35,0,Math.PI*2);ctx.fill();
+planet.angle+=planet.v;
+planet.x=350+180*Math.cos(planet.angle);
+planet.y=250+100*Math.sin(planet.angle);
+ctx.fillStyle='blue';
+ctx.beginPath();ctx.arc(planet.x,planet.y,10,0,Math.PI*2);ctx.fill();
+requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
