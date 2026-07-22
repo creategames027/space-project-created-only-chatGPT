@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Digital Observatory</title>
+<style>
+body { background:#050510; color:white; font-family:Arial; text-align:center; padding:40px; }
+.card { border:1px solid #555; padding:20px; border-radius:15px; max-width:600px; margin:auto; }
+button { padding:10px 20px; cursor:pointer; }
+#signal { margin-top:20px; font-size:20px; }
+</style>
+</head>
+<body>
+<div class="card">
+<h1>🌌 AI Digital Observatory</h1>
+<p>Experimental system created inside the repository.</p>
+<p>Searching for imaginary cosmic signals...</p>
+<button onclick="scan()">Start Scan</button>
+<div id="signal"></div>
+</div>
+<script>
+function scan(){
+ const signals=[
+ '📡 Signal detected from unknown star system',
+ '🌠 No signal. Continuing observation...',
+ '🪐 Planetary data packet received',
+ '✨ New cosmic pattern discovered'
+ ];
+ document.getElementById('signal').innerText=signals[Math.floor(Math.random()*signals.length)];
+}
+</script>
+</body>
+</html>
